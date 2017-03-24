@@ -9,6 +9,5 @@
 <h2><a href=/registrate />Add user</a>
     <a href=/users />Show users</a>
 </h2>
-
 </body>
 </html>
