@@ -5,6 +5,7 @@
     <title>Welcome</title>
 </head>
 <body><h1>Add users</h1>
+<h2><a href=/ />Home</a></h2>
 <form method="POST">
     First Name: <input type="text" name="firstName" /><br/>
     Last Name: <input type="text" name="secondName" /><br/>

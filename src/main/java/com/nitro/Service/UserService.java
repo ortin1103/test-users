@@ -7,15 +7,22 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
+
     @Autowired
     UserRepo userRepo;
 
-    public Iterable<User> getUser(){
+    public Iterable<User> getUsers() {
+
         return userRepo.findAll();
     }
     public void addUser(User user){
-        userRepo.save(user);
 
+        userRepo.save(user);
     }
+
+    public User getUserForId(long id){
+       return userRepo.findOne(id);
+    }
+
 }
 
