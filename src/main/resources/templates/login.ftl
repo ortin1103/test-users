@@ -4,7 +4,7 @@
 </head>
 
 <body>
-<h1>Spring Security Login (Freemarker)</h1>
+<h1> Login </h1>
 
 <form name="f" action="/login" method="POST">
     <table>
