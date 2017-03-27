@@ -6,8 +6,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.csrf.CsrfTokenRepository;
-import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 
 @Configuration
 @EnableWebSecurity
@@ -15,11 +13,13 @@ public class SecurityWebInitialization extends WebSecurityConfigurerAdapter {
 
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .authorizeRequests()
+                .authorizeRequests().antMatchers("/user","/users")
+                .hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .permitAll();
+                .formLogin().loginPage("/login").failureForwardUrl("/home")
+                .permitAll().and().logout().logoutSuccessUrl("/login")
+                .and().rememberMe().tokenValiditySeconds(2419200).key("rememberKey");
         http.csrf().disable();
     }
 
@@ -27,11 +27,8 @@ public class SecurityWebInitialization extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .inMemoryAuthentication()
-                .withUser("user").password("password").roles("USER").and()
-                .withUser("admin").password("password").roles("USER", "ADMIN");
-
-
-
-
+                .withUser("user").password("1111").roles("USER").and()
+                .withUser("admin").password("2222").roles("USER", "ADMIN");
     }
+
 }
