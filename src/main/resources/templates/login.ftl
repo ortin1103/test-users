@@ -1,23 +1,23 @@
-<html>
-<head>
-    <title>Spring Security Login</title>
 </head>
 
 <body>
-<h1> Login </h1>
-
-<form name="f" action="/login" method="POST">
-    <table>
-        <tr><td>User:</td><td><input type='text' name='username' value=''/></td></tr>
-        <tr><td>Password:</td><td><input type='password' name='password' value=''/></td></tr>
-        <tr><td><input type="checkbox" name="remember-me"/></td><td>Don't ask for my password for two weeks</td></tr>
-
-        <tr><td colspan='2'><input name="submit" type="submit"></td></tr>
-        <tr><td colspan='2'><input name="reset" type="reset"></td></tr>
-    </table>
-
-
+<form action="/registration" method="get">
+    <button  type="Submit">Go To Registration Page</button>
 </form>
 
+<div class="container">
+
+    <form action="/login" method="POST" class="form-signin">
+        <h3 class="form-signin-heading" text="Welcome"></h3>
+        <br/>
+
+        <input type="text" id="email" name="email"  placeholder="Email"
+               class="form-control" /> <br/>
+        <input type="password"  placeholder="Password"
+               id="password" name="password" class="form-control" /> <br />
+
+        <button name="Submit" value="Login" type="Submit" text="Login"></button>
+    </form>
+</div>
 </body>
 </html>
