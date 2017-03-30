@@ -1,6 +1,5 @@
 package com.nitro.Security;
 
-import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -21,9 +20,9 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/avtorbooking");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/UserLoginRepo");
         dataSource.setUsername( "root" );
-        dataSource.setPassword( "root" );
+        dataSource.setPassword( "3148112695Nitro!" );
         return dataSource;
     }
 }

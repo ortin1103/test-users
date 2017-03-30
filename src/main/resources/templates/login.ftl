@@ -5,19 +5,16 @@
     <button  type="Submit">Go To Registration Page</button>
 </form>
 
-<div class="container">
 
-    <form action="/login" method="POST" class="form-signin">
-        <h3 class="form-signin-heading" text="Welcome"></h3>
+
+    <form action="/login" method="POST">
+        <h3 text="Welcome"></h3>
         <br/>
 
-        <input type="text" id="email" name="email"  placeholder="Email"
-               class="form-control" /> <br/>
-        <input type="password"  placeholder="Password"
-               id="password" name="password" class="form-control" /> <br />
-
-        <button name="Submit" value="Login" type="Submit" text="Login"></button>
+        <input type="email" id="email" name="email" placeholder="Email"/> <br/>
+        <input type="password" id="password" name="password"  placeholder="Password"/> <br />
+        <input name="Submit" type="submit" placeholder="Submit"/>
     </form>
-</div>
+
 </body>
 </html>
